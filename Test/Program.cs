@@ -20,7 +20,11 @@ namespace Test
             int rndEnemy = rnd.Next(firtstOnList, lastOnList);
             return new Enemy(rndEnemy);
         }
-
+        /// <summary>
+        /// Funkcja wybierająca losowego przeciwnika z listy podanych id
+        /// </summary>
+        /// <param name="list">Numery Id przeciwników z których losujemy jednego</param>
+        /// <returns></returns>
         public static Enemy RndEnemySpecific(params int[] list)
         {
             Random rnd = new Random();
@@ -32,7 +36,7 @@ namespace Test
         {
             while (true)
             {
-                Enemy fightEnemy = RndEnemySpecific(1, 2, 6);
+                Enemy fightEnemy = RndEnemy(1, 7);
                 Console.WriteLine("Przeciwnik: " + fightEnemy.Name + "\nHp: " + fightEnemy.Hp + "\nDamage: " + fightEnemy.Damage);
                 Console.ReadKey();
             }
